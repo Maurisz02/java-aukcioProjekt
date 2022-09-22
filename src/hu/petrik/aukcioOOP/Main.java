@@ -42,8 +42,8 @@ public class Main {
         }
 
         for (int i = 1; i<20;i++){
-            int rnd = (int)((Math.random() * (fs3.getFestmenyek().size()-1))+1);
-            fs3.getFestmenyek().get(rnd).licit();
+            int rnd = (int)((Math.random() * (fs1.getFestmenyek().size()-1))+1);
+            fs1.getFestmenyek().get(rnd).licit();
         }
 
 
