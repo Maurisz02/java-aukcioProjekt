@@ -24,17 +24,28 @@ public class Main {
             String fStilus = sc.next();
             Festmeny ujFestmeny = new Festmeny(fCim,fFesto,fStilus);
             fTomb[i] = ujFestmeny;
+            fs1.getFestmenyek().add(fTomb[i]);
         }
-        Festmenyek fs2 = new Festmenyek(fTomb);
-        System.out.println(fs2);
+        //System.out.println(fs1);
+
+        Festmenyek fs3 = null;
 
         try{
-            Festmenyek fs3 = new Festmenyek("festmenyek.txt");
-            System.out.println(fs3);
+            fs3 = new Festmenyek("festmenyek.txt");
+            fs1.getFestmenyek().addAll(fs3.getFestmenyek());
+            System.out.println(fs1);
+
         }catch (FileNotFoundException e){
             System.out.println("Hiba az festmenyek.txt fájl nem található");
         }catch (IOException e){
             System.err.println("Ismeretlen hiba történt a fájl beolvasás folyamán");
         }
+
+        for (int i = 1; i<20;i++){
+            int rnd = (int)((Math.random() * (fs3.getFestmenyek().size()-1))+1);
+            fs3.getFestmenyek().get(rnd).licit();
+        }
+
+
     }
 }
