@@ -11,7 +11,7 @@ public class Festmeny {
     private LocalDate legutolsoLicitIdeje;
     private Boolean elkelt;
 
-    Festmeny(String cim, String festo, String stilus){
+    Festmeny(String festo, String cim, String stilus){
         this.cim = cim;
         this.festo = festo;
         this.stilus = stilus;
