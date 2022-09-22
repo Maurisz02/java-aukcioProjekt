@@ -80,4 +80,13 @@ public class Festmeny {
             licit();
         }
     }
+
+    @Override
+    public String toString() {
+        if (elkelt){
+            return String.format("%s: %s (%s)\nelkelt\n%d $ - %t (összesen: %d db)",this.festo,this.cim,this.stilus,this.legmagasabbLicit,this.legutolsoLicitIdeje,this.licitekSzama);
+        }else{
+            return String.format("%s: %s (%s)\n%d $ - %t (összesen: %d db)",this.festo,this.cim,this.stilus,this.legmagasabbLicit,this.legutolsoLicitIdeje,this.licitekSzama);
+        }
+    }
 }
