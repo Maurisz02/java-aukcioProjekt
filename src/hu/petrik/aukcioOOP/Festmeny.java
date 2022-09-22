@@ -49,7 +49,7 @@ public class Festmeny {
     }
 
     public void licit(){
-        if(!this.elkelt){
+        if(this.elkelt){
             System.out.println("A festmény már elkelt!");
         }else if(this.licitekSzama==0){
             this.legmagasabbLicit = 100;

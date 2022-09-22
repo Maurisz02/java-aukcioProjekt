@@ -33,7 +33,7 @@ public class Main {
         try{
             fs3 = new Festmenyek("festmenyek.txt");
             fs1.getFestmenyek().addAll(fs3.getFestmenyek());
-            System.out.println(fs1);
+            //System.out.println(fs1);
 
         }catch (FileNotFoundException e){
             System.out.println("Hiba az festmenyek.txt fájl nem található");
@@ -45,6 +45,9 @@ public class Main {
             int rnd = (int)((Math.random() * (fs1.getFestmenyek().size()-1))+1);
             fs1.getFestmenyek().get(rnd).licit();
         }
+        System.out.println("");
+        System.out.println("Licit után");
+        System.out.println(fs1);
 
 
     }
