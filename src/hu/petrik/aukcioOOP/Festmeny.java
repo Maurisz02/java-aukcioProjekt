@@ -69,8 +69,15 @@ public class Festmeny {
     public void licit(int merek){
         if (merek <10 || merek > 100){
             System.out.println("Hibás paraméter");
+        }else if(this.licitekSzama==0){
+            this.legmagasabbLicit = 100;
+            double szazalek = merek/100;
+            this.legmagasabbLicit = this.legmagasabbLicit+(int)szazalek;
+            this.legmagasabbLicit =(int) Math.round(this.legmagasabbLicit/100.0) * 100;
+            this.licitekSzama++;
+            this.legutolsoLicitIdeje = LocalDate.now();
         }else{
-
+            licit();
         }
     }
 }
