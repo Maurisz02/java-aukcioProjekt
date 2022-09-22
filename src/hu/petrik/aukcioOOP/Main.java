@@ -49,6 +49,25 @@ public class Main {
         System.out.println("Licit után");
         System.out.println(fs1);
 
+        System.out.println("Felhasználói licit:");
+        int adat = 0;
+        while(adat!=-1)
+        System.out.println("Add meg a festmény sorszámát amire licitálni szeretnél:");
+        adat = sc.nextInt()-1;
+        if (adat > fs1.getFestmenyek().size() && adat<-1){
+            System.out.println("Hibás sorszám");
+        }else if(fs1.getFestmenyek().get(adat).getElkelt()){
+            System.out.println("Sajnos a kép elkelt addj meg új sorszámot! ");
+            adat = sc.nextInt();
+        }
+        System.out.println("Milyen mértékkel szeretnél licitálni?");
+        int licit = sc.nextInt();
+        if (licit == 0){
+            fs1.getFestmenyek().get(adat).licit();
+        }else{
+            fs1.getFestmenyek().get(adat).licit(licit);
+        }
+
 
     }
 }
