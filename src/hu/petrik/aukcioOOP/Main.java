@@ -8,13 +8,12 @@ public class Main {
         Festmeny f2 = new Festmeny("Transformers","JamaulBee","Absztrakt");
         Festmenyek fs1 = new Festmenyek(new Festmeny[]{f1, f2});
 
-        Festmeny[] fTomb = new Festmeny[]{};
-
         //System.out.println(f1);
         Scanner sc = new Scanner(System.in);
         System.out.println("Hány darab festményt szeretnél hozzáadni?");
         int fdb = sc.nextInt();
-        for(int i = 0; i < fdb-1;i++){
+        Festmeny[] fTomb = new Festmeny[fdb];
+        for(int i = 0; i < fdb;i++){
             System.out.println("Add meg a festmény címét");
             String fCim = sc.next();
             System.out.println("Add meg a festmény festőjét");
@@ -23,7 +22,9 @@ public class Main {
             String fStilus = sc.next();
             Festmeny ujFestmeny = new Festmeny(fCim,fFesto,fStilus);
             fTomb[i] = ujFestmeny;
-            System.out.println(fTomb[i]);
         }
+        Festmenyek fs2 = new Festmenyek(fTomb);
+
+        System.out.println(fs2);
     }
 }
